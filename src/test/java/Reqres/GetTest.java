@@ -1,4 +1,4 @@
-package Reqres.in;
+package Reqres;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Header;

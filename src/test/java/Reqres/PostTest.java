@@ -1,10 +1,12 @@
-package Reqres.in;
+package Reqres;
 
 import org.json.JSONObject;
 import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static io.restassured.RestAssured.*;
 
 public class PostTest {
 
@@ -20,14 +22,18 @@ public class PostTest {
     // getRequest With Query Param
     public void createNewUser() {
 
-        Map<String, Object> newUserDetails = new HashMap<String, Object>();
-        newUserDetails.put("name", "Martin");
-        newUserDetails.put("job", "doctor");
+        JSONObject POSTrequestBody = new JSONObject();
+        POSTrequestBody.put("name", "Martin");
+        POSTrequestBody.put("job", "doctor");
 
-        JSONObject POSTrequestBody = new JSONObject(newUserDetails);
-
-
+    given().
+        headers(requestHeaders).
+        body(POSTrequestBody.toJSONString).
+    when().
+        post(baseurlReqres + usersReqres).
+        log().all().
+    then().
+        statusCode(200);
     }
-
 
 }
