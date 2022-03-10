@@ -9,38 +9,40 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PostTest {
-
+public class PatchTest {
     Map<String, String> requestHeaders = new HashMap<>() {{
         put("Content-Type", "application/json");
     }};
 
     String baseurlReqres = "https://reqres.in/api";
     String usersReqres = "/users";
+    String endpoint = "/{id}";
 
     @Test
-    // create new user by POST request
-    public void createNewUser() {
+    // update user by PATCH request
+    public void updateUser() {
 
         JSONObject POSTrequestBody = new JSONObject();
         POSTrequestBody.put("name", "Martin");
-        POSTrequestBody.put("job", "doctor");
+        POSTrequestBody.put("job", "teacher");
+
+        String id = "384";
 
         Response response = RestAssured.given().
                 headers(requestHeaders).
+                pathParam("id", id).
                 body(POSTrequestBody.toString()).
                 log().all().
                 when().
-                post(baseurlReqres + usersReqres).
+                patch(baseurlReqres + usersReqres + endpoint).
                 then().
                 extract().response();
 
-        Assert.assertEquals(response.getStatusCode(), 201);
+        Assert.assertEquals(200, response.statusCode());
 
         String body = response.body().asString();
         System.out.println(body);
 
-//        {"name":"Martin","job":"doctor","id":"384","createdAt":"2022-03-10T12:38:06.452Z"}
+//        {"name":"Martin","job":"teacher","updatedAt":"2022-03-10T12:58:56.794Z"}
     }
-
 }
