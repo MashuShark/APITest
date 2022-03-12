@@ -1,6 +1,6 @@
-import org.junit.Test;
-
 import static io.restassured.RestAssured.given;
+
+import org.testng.annotations.Test;
 
 public class FirstTest {
 

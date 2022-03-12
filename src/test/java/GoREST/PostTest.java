@@ -1,14 +1,9 @@
 package GoREST;
 
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-
-import io.restassured.response.ValidatableResponse;
-import org.junit.Assert;
-import org.junit.Test;
-
-import static org.hamcrest.CoreMatchers.containsString;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class PostTest {
 

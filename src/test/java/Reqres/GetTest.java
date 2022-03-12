@@ -6,9 +6,9 @@ import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-import org.junit.Assert;
-import org.junit.Test;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,7 +42,7 @@ public class GetTest {
 
         System.out.println("Response Body is =>  " + body);
 
-        Assert.assertEquals("StatusCode does not match 200", 200, response.getStatusCode());
+        Assert.assertEquals( response.getStatusCode(), 200, "StatusCode does not match 200");
         Assert.assertEquals ("actual name: " + actualName + "don't match expected name: " + page,
                 page, actualName);
     }
@@ -76,9 +76,9 @@ public class GetTest {
 
         System.out.println("Response Body is =>  " + body);
 
-        Assert.assertEquals("StatusCode does not match 200", 200, response.getStatusCode());
-        Assert.assertEquals ("actual name: " + actualData + " don't match expected name: " + expectedEmail,
-                actualData, expectedEmail);
+        Assert.assertEquals( response.getStatusCode(), 200, "StatusCode does not match 200");
+        Assert.assertEquals (actualData, expectedEmail,
+                "actual name: " + actualData + " don't match expected name: " + expectedEmail);
     }
 
     @Test

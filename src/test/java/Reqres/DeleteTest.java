@@ -1,10 +1,9 @@
 package Reqres;
 
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 
+import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
 public class DeleteTest {

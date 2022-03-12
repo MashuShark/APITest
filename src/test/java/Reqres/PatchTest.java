@@ -3,9 +3,8 @@ package Reqres;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.json.JSONObject;
-import org.junit.Assert;
-import org.junit.Test;
-
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,7 +37,7 @@ public class PatchTest {
                 then().
                 extract().response();
 
-        Assert.assertEquals(200, response.statusCode());
+        Assert.assertEquals( response.getStatusCode(), 200, "StatusCode does not match 200");
 
         String body = response.body().asString();
         System.out.println(body);
