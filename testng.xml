@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <parameter name = "employeeId" value = "104"/>
+    <test verbose="2" preserve-order="true" name="/home/mashu/Programming_languages/Java/MyEpam/AutoTest/APITest">
+        <classes>
+            <class name="GoREST.PostTest">
+                <methods>
+                    <include name="postRequest"/>
+                </methods>
+            </class>
+            <class name="JSONPlaceholder.GetTest">
+                <methods>
+                    <include name="getRequest"/>
+                    <include name="getRequestWithQueryParam"/>
+                </methods>
+            </class>
+            <class name="Localhost.DeleteTest">
+                <methods>
+                    <include name="deleteUser"/>
+                    <include name="deleteUser2"/>
+                </methods>
+            </class>
+            <class name="Localhost.GetTest">
+                <methods>
+                    <include name="getSingleUser"/>
+                    <include name="getListUsers"/>
+                </methods>
+            </class>
+            <class name="Localhost.PostTest">
+                <methods>
+                    <include name="POSTAddNewEmployee"/>
+                </methods>
+            </class>
+            <class name="Reqres.DeleteTest">
+                <methods>
+                    <include name="deleteUser"/>
+                </methods>
+            </class>
+            <class name="Reqres.GetTest">
+                <methods>
+                    <include name="getListUsers"/>
+                    <include name="getSingleUser"/>
+                    <include name="getSingleUserNotFound"/>
+                </methods>
+            </class>
+            <class name="Reqres.PatchTest">
+                <methods>
+                    <include name="updateUser"/>
+                </methods>
+            </class>
+            <class name="Reqres.PostTest">
+                <methods>
+                    <include name="POSTcreateNewUser"/>
+                </methods>
+            </class>
+            <class name="Reqres.PutTest">
+                <methods>
+                    <include name="updateUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

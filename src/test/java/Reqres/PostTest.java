@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +20,7 @@ public class PostTest {
 
     @Test
     // create new user by POST request
-    public void createNewUser() {
+    public void POSTcreateNewUser() {
 
         JSONObject POSTrequestBody = new JSONObject();
         POSTrequestBody.put("name", "Martin");

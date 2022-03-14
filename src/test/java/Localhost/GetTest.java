@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class GetTest {
 
-    Map<String,String> requestHeaders = new HashMap<String, String>() {{
+    Map<String,String> requestHeaders = new HashMap<>() {{
         put("Content-Type", "application/json");
     }};
 
@@ -26,7 +26,7 @@ public class GetTest {
     public void getSingleUser() {
         String id = "2";
 
-        Response response = (Response) RestAssured.given()
+        Response response = RestAssured.given()
                 .headers(requestHeaders)
                 .pathParam("id", id)
                 .log().all()
@@ -48,6 +48,15 @@ public class GetTest {
 
         Assert.assertEquals( response.getStatusCode(), 200, "StatusCode does not match 200");
     }
+
+//    {
+//  "id": 2,
+//  "first_name": "Boycey",
+//  "last_name": "Mohun",
+//  "email": "bmohun1@sphinn.com",
+//  "gender": "Female",
+//  "position": 7
+//}
 
     @Test
     // getRequest With Query Param
