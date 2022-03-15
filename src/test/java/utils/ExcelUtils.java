@@ -5,15 +5,12 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.IOException;
-import java.util.Objects;
-
 public class ExcelUtils {
 
     static XSSFWorkbook workbook;
     static XSSFSheet sheet;
 
-    public ExcelUtils(String excelPath, String sheetName){
+    public ExcelUtils(String excelPath, String sheetName) {
         try {
             workbook = new XSSFWorkbook(excelPath);
             sheet = workbook.getSheet(sheetName);
@@ -24,12 +21,12 @@ public class ExcelUtils {
         }
     }
 
-    public static void getFirstNameFromCell(){
+    public void getFirstNameFromCell() {
         String value = sheet.getRow(1).getCell(0).getStringCellValue();
         System.out.println("Value from (1,0) Cell -> " + value);
     }
 
-    public static void getPositionFromCell(){
+    public void getPositionFromCell() {
         DataFormatter formatter = new DataFormatter();
         XSSFCell dataCell = sheet.getRow(1).getCell(4);
         Object value = formatter.formatCellValue(dataCell);
@@ -37,7 +34,7 @@ public class ExcelUtils {
         System.out.println("Position from (1,4) Cell is -> " + value);
     }
 
-    public static void getRowCount() {
+    public void getRowCount() {
         int rowCount = sheet.getPhysicalNumberOfRows();
         System.out.println("Number of rows is -> " + rowCount);
     }
