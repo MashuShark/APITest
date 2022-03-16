@@ -7,12 +7,13 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class GetTest {
 
-    Map<String,String> requestHeaders = new HashMap<>() {{
+    Map<String, String> requestHeaders = new HashMap<>() {{
         put("Content-Type", "application/json");
     }};
 
@@ -37,16 +38,15 @@ public class GetTest {
 
         // get all response headers and print them
         Headers allHeaders = response.getHeaders();
-        for(Header header : allHeaders)
-        {
-            System.out.print(header.getName() +" : ");
+        for (Header header : allHeaders) {
+            System.out.print(header.getName() + " : ");
             System.out.println(header.getValue());
         }
 
         String body = response.body().asString();
         System.out.println("Response Body is =>  " + body);
 
-        Assert.assertEquals( response.getStatusCode(), 200, "StatusCode does not match 200");
+        Assert.assertEquals(response.getStatusCode(), 200, "StatusCode does not match 200");
     }
 
 //    {
@@ -78,6 +78,6 @@ public class GetTest {
 
         System.out.println("Response Body is =>  " + body);
 
-        Assert.assertEquals( response.getStatusCode(), 200, "StatusCode does not match 200");
+        Assert.assertEquals(response.getStatusCode(), 200, "StatusCode does not match 200");
     }
 }

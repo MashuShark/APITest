@@ -23,7 +23,7 @@ public class ExcelUtils {
 
     public void getFirstNameFromCell(int rowNumber, int cellNumber) {
         String value = sheet.getRow(rowNumber).getCell(cellNumber).getStringCellValue();
-        System.out.println("Value from ("+ rowNumber + "," + cellNumber + ") Cell -> " + value);
+        System.out.println("Value from (" + rowNumber + "," + cellNumber + ") Cell -> " + value);
     }
 
     public void getPositionFromCell(int rowNumber, int cellNumber) {
@@ -31,7 +31,7 @@ public class ExcelUtils {
         XSSFCell dataCell = sheet.getRow(rowNumber).getCell(cellNumber);
         Object value = formatter.formatCellValue(dataCell);
 
-        System.out.println("Position from ("+ rowNumber + "," + cellNumber + ") Cell is -> " + value);
+        System.out.println("Position from (" + rowNumber + "," + cellNumber + ") Cell is -> " + value);
     }
 
     public void getRowCount() {

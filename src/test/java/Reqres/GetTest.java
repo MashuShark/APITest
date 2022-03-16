@@ -6,15 +6,15 @@ import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class GetTest {
 
-    Map<String,String> requestHeaders = new HashMap<String, String>() {{
+    Map<String, String> requestHeaders = new HashMap<String, String>() {{
         put("Content-Type", "application/json");
     }};
 
@@ -42,8 +42,8 @@ public class GetTest {
 
         System.out.println("Response Body is =>  " + body);
 
-        Assert.assertEquals( response.getStatusCode(), 200, "StatusCode does not match 200");
-        Assert.assertEquals ("actual name: " + actualName + "don't match expected name: " + page,
+        Assert.assertEquals(response.getStatusCode(), 200, "StatusCode does not match 200");
+        Assert.assertEquals("actual name: " + actualName + "don't match expected name: " + page,
                 page, actualName);
     }
 
@@ -68,16 +68,15 @@ public class GetTest {
 
         // get all response headers and print them
         Headers allHeaders = response.getHeaders();
-        for(Header header : allHeaders)
-        {
-            System.out.print(header.getName() +" : ");
+        for (Header header : allHeaders) {
+            System.out.print(header.getName() + " : ");
             System.out.println(header.getValue());
         }
 
         System.out.println("Response Body is =>  " + body);
 
-        Assert.assertEquals( response.getStatusCode(), 200, "StatusCode does not match 200");
-        Assert.assertEquals (actualData, expectedEmail,
+        Assert.assertEquals(response.getStatusCode(), 200, "StatusCode does not match 200");
+        Assert.assertEquals(actualData, expectedEmail,
                 "actual name: " + actualData + " don't match expected name: " + expectedEmail);
     }
 

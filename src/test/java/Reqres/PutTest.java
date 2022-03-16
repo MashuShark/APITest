@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,7 +38,7 @@ public class PutTest {
                 then().
                 extract().response();
 
-        Assert.assertEquals( response.getStatusCode(), 200, "StatusCode does not match 200");
+        Assert.assertEquals(response.getStatusCode(), 200, "StatusCode does not match 200");
 
         String body = response.body().asString();
         System.out.println(body);

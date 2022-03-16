@@ -4,8 +4,8 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,7 +35,7 @@ public class PostTest {
                 then().
                 extract().response();
 
-        Assert.assertEquals( response.getStatusCode(), 201, "StatusCode does not match 201");
+        Assert.assertEquals(response.getStatusCode(), 201, "StatusCode does not match 201");
 
         String body = response.body().asString();
         System.out.println(body);

@@ -53,6 +53,5 @@ public class PostTest {
 
         String body = response.body().asString();
         System.out.println(body);
-
     }
 }
