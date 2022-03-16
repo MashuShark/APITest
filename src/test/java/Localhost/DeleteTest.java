@@ -17,9 +17,11 @@ public class DeleteTest {
     String endpointLocalhost = "/{id}";
 
     @DataProvider(name = "dataForDelete")
-    public Object[] dataForDelete() {
-        return new Object[]{
-                "102", "57", "8"
+    public Object[][] dataForDelete() {
+        return new Object[][]{
+                {59},
+                {75},
+                {7}
         };
     }
 
@@ -39,7 +41,7 @@ public class DeleteTest {
                 when().
                 delete(baseurlLocalhost + employeeLocalhost + endpointLocalhost).
                 then().
-                statusCode(204);
+                statusCode(200);
     }
 
     @Parameters("employeeId")
