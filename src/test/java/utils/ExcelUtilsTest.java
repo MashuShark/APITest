@@ -7,8 +7,8 @@ public class ExcelUtilsTest {
         String sheetName = "Sheet1";
 
         ExcelUtils excel = new ExcelUtils(excelPath, sheetName);
-        excel.getFirstNameFromCell();
-        excel.getPositionFromCell();
+        excel.getFirstNameFromCell(2, 0);
+        excel.getPositionFromCell(2, 4);
         excel.getRowCount();
     }
 

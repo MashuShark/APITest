@@ -21,17 +21,17 @@ public class ExcelUtils {
         }
     }
 
-    public void getFirstNameFromCell() {
-        String value = sheet.getRow(1).getCell(0).getStringCellValue();
-        System.out.println("Value from (1,0) Cell -> " + value);
+    public void getFirstNameFromCell(int rowNumber, int cellNumber) {
+        String value = sheet.getRow(rowNumber).getCell(cellNumber).getStringCellValue();
+        System.out.println("Value from ("+ rowNumber + "," + cellNumber + ") Cell -> " + value);
     }
 
-    public void getPositionFromCell() {
+    public void getPositionFromCell(int rowNumber, int cellNumber) {
         DataFormatter formatter = new DataFormatter();
-        XSSFCell dataCell = sheet.getRow(1).getCell(4);
+        XSSFCell dataCell = sheet.getRow(rowNumber).getCell(cellNumber);
         Object value = formatter.formatCellValue(dataCell);
 
-        System.out.println("Position from (1,4) Cell is -> " + value);
+        System.out.println("Position from ("+ rowNumber + "," + cellNumber + ") Cell is -> " + value);
     }
 
     public void getRowCount() {
