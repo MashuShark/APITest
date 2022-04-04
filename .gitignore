@@ -1,5 +1,12 @@
-# Project exclude paths
-/target/
+# Default ignored files
+/.idea/shelf/
+/workspace.xml
+
+# Intellij
 .idea/
-src/test/GoREST/
-src/test/JSONPlaceholder/
+*.iml
+*.iws
+
+# Maven
+log/
+target/
