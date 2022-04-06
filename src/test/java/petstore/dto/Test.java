@@ -20,6 +20,11 @@ public class Test {
     @org.testng.annotations.Test
     public void addUser() {
 
+        // create a new user by a constructor
+        User testUser1 = new User(10L, "nickDuck", "Nick", "Duck",
+                "nickduck@email.com|", "nickpass","+380997076", 1 );
+
+        // create a new user by a builder
         User testUser = new User.UserBuilder()
                 .withId(111L)
                 .withUserName("IvanPupkin")
