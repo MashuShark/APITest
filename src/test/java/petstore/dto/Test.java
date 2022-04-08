@@ -20,25 +20,24 @@ public class Test {
     @org.testng.annotations.Test
     public void addUser() {
 
+        User testUser2 = User.builder()
+                .id(1L)
+                .userName("sodcroft0")
+                .firstName("Shadow")
+                .lastName("Odcroft")
+                .email("sodcroft0@senate.gov")
+                .password("815b32")
+                .phone("733-356-1417")
+                .userStatus(1)
+                .build();
+
         // create a new user by a constructor
         User testUser1 = new User(10L, "nickDuck", "Nick", "Duck",
                 "nickduck@email.com|", "nickpass","+380997076", 1 );
 
-        // create a new user by a builder
-        User testUser = new User.UserBuilder()
-                .withId(111L)
-                .withUserName("IvanPupkin")
-                .withFirstName("Ivan")
-                .withLastName("Pupkin")
-                .withEmail("emailpupkin@email.com")
-                .withPassword("pupkinPass")
-                .withPhone("+3809900000")
-                .withUserStatus(true).build();
-
-
         Response response = RestAssured.given().
                 headers(requestHeaders).
-                body(testUser).
+                body(testUser2).
                 log().all().
                 when().
                 post(BASE_URL + BASE_PATH + USER).
